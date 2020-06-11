@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>interval</title>
+	<script type="text/javascript">
+		function blick() {
+			// body...
+			let body = document.querySelector('body')
+			if (body.style.visibility === 'hidden') {
+				body.style.visibility = 'visible'
+			}
+
+			else {
+				body.style.visibility = 'hidden'
+			}
+		}
+		//blink every 500ms
+		window.setInterval(blick,500)
+	</script>
+</head>
+<body>
+	<h1>hello, world!</h1>
+</body>
+</html>

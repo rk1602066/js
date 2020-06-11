@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block title %}index page{% endblock %}
+{% block body %}
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+      {% if not session.log%}
+          <h3>
+            For search a book, You have to login first.
+          </h3>
+          <h4></h4><a href="{{ url_for("login") }}">Click Here</a> To Login</h4>
+
+      {% else %}
+                <form class="form-inline" method="post" action="{{ url_for("books") }}">
+                    <h3>Search book :</h3>
+                        <nav class="navbar navbar-light bg-light">
+                             <input class="form-control mr-sm-2" type="search" name = "search_input" placeholder="Search"
+                                    aria-label="Search"required>
+                            <button class="btn btn-primary" type="submit">Search</button>
+                        </nav>
+
+                </form>
+            {% endif %}
+
+      </div>
+
+   </div>
+
+{% endblock %}

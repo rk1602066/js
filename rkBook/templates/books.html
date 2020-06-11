@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block title %}Books page{% endblock %}
+{% block body %}
+        <h4>The books are :</h4>
+    <div class="jumbotron jumbotron-fluid">
+            {% for book in books %}
+            <div style="height: 60px;border: darkgray 2px solid;text-align: center;padding-bottom: 30px;padding-top: 10px" ><a href="{{ url_for('book',book_isbn = book.isbn) }}">Isbn No :  {{book.isbn }}
+                    Title  : {{ book.title }}  Author :  {{ book.author }} published_year :  {{ book.year }}</a>
+            </div>
+            {% endfor %}
+
+    </div>
+{% endblock %}

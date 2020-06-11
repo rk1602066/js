@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% block title %}Book page{% endblock %}
+{% block body %}
+    <div class="jumbotron jumbotron-fluid">
+    <h2>Book details:</h2>
+     <ul>
+        <li>Book Title       : {{ book.title }}</li>
+        <li>Book Isbn        : {{ book.isbn}}</li>
+        <li>Author Name      : {{ book.author }}</li>
+        <li>Published Date   : {{ book.year }}</li>
+        <li>Average_rating   : {{ data.average_rating }}</li>
+        <li>Ratings_count    : {{ data.ratings_count }}</li>
+     </ul>
+            <h4>{{ message }}</h4>
+            {% for reviewx in reviews %}
+                <div style="height: 60px;border: cornsilk 1px solid;padding-bottom: 30px;padding-top: 10px" >
+                    <h5>@<b>{{ reviewx.reviewers_name}}</b> <small> said </small>: {{ reviewx.review }}, <small> Rate </small> : {{ reviewx.rating}}/5  <small>time :{{ reviewx.datetime }}</small></h5>
+                </div>
+            {% endfor %}
+
+            <br><br>
+        <h5><b>{{ session.username }} : </b></h5>
+
+      <form method="POST"action="{{url_for('success',book_isbn = book.isbn)}}">
+          <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Rate this book out of 5 :</label>
+          <select class="custom-select my-1 mr-sm-2"name="rating" id="inlineFormCustomSelectPref">
+                 <option selected>Choose...</option>
+                 <option value="1">1</option>
+                 <option value="2">2</option>
+                 <option value="3">3</option>
+                 <option value="4">4</option>
+                 <option value="5">5</option>
+          </select>
+        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Leave a review : </label>
+        <div class="input-group-prepend">
+             <textarea class="form-control"name="review"placeholder="type your comment here"
+                    aria-label="With textarea"required></textarea>
+         </div>
+            <br>
+        <div>
+            <button class="btn btn-primary" type="submit">Submit comment</button>
+        </div>
+      </form>
+
+
+    </div>
+
+{% endblock %}

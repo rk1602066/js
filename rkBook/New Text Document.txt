@@ -1,0 +1,7 @@
+Create table reviews(
+id serial primary key,
+rating integer not Null,
+review varchar not Null,
+book_isbn varchar references books,
+reviewers_name varchar not Null,
+datetime varchar not Null);

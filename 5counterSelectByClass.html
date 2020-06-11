@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>counter</title>
+	<script type="text/javascript">
+		let counter = 0
+		function count() {
+			counter++
+			document.querySelector('#count').innerHTML=counter
+		}
+	</script>
+</head>
+<body>
+	<form onsubmit="count();return false">
+		<input type="submit" name="">
+	</form>
+<div id="count">
+	0
+</div>
+</body>
+</html>

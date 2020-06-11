@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>onsubmit</title>
+</head>
+<body>
+
+<form id="form">
+	<input type="text" id="name">
+	<input type="submit"id="submit" name=""disabled>
+</form>
+<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded',function () {
+
+		document.querySelector('#name').onkeyup = function(){
+			if(document.querySelector('#name').value===''){
+				document.querySelector("#submit").disabled=true
+			}
+			else{
+				document.querySelector("#submit").disabled=false
+			}
+		}
+
+		document.querySelector('#form').onsubmit = function(){
+			const name = document.querySelector('#name').value
+			alert("hello "+ name+" !!!")
+		}
+		// body...
+	})
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>hello</title>
+	<script type="text/javascript">
+		function greet()
+		{
+			let name = document.querySelector('#name').value
+			if (name==='') 
+				{
+					name="world"
+				}
+			document.querySelector('#result').innerHTML = "hellow "+name+"!!!"	
+		}
+	</script>
+</head>
+<body>
+<form onsubmit="greet(); return false">
+<input type="text" id="name">
+<input type="submit" >
+</form>
+<div id="result">
+	hellow!
+</div>
+</body>
+</html>

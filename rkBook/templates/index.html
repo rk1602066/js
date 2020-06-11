@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block title %}index page{% endblock %}
+{% block body %}
+    <div class="jumbotron jumbotron-fluid">
+
+        {% if session.log %}
+    <br>
+            <div style="text-align:center">
+                <h3>Welcome {{ session.username }}</h3>
+                <h2>Study in the name of your Lord who created you</h2>
+                <h4>Want to logout? <a href="{{ url_for("logout") }}">click here</a> </h4>
+            </div>
+
+        {% else %}
+            <br>
+
+            <div style="text-align:center;    ">
+                <h3>Welcome to our Page</h3>
+                <h2>Study in the name of your Lord who created you<br></h2>
+            </div>
+            <div style="position: center">
+                <div style="text-align:center;float:left;width: 50%">
+                    <hr class="my-4">
+                    <h3>Dont have an account?</h3>
+                    <a class="btn btn-primary btn-lg" href="{{ url_for("register") }}" role="button">Create account</a>
+                </div>
+
+                <div style="text-align:center;float:right;border: darkgray 1px;width: 50%">
+                    <hr class="my-4">
+                    <h3>Already have an account??</h3>
+                    <a class="btn btn-primary btn-lg" href="{{ url_for("login") }}" role="button">Login</a>
+                </div>
+            </div>
+
+
+        {% endif %}
+    </div>
+
+{% endblock %}

@@ -1,0 +1,5 @@
+Create table books(
+isbn varchar primary key,
+title varchar not Null,
+author varchar not Null,
+year integer not Null);

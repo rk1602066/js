@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>onkeyup</title>
+</head>
+<body>
+<form>
+	<input id="textfield" type="text" placeholder="type here">
+	<input id="submit" type="submit"disabled>
+</form>
+
+<script type="text/javascript">
+	document.querySelector('#textfield').onkeyup = function () {
+		// body...
+		if (document.querySelector('#textfield').value==='') {
+			document.querySelector('#submit').disabled=true;
+		}
+		else{
+			document.querySelector('#submit').disabled=false;
+		}
+	}
+</script>
+</body>
+</html>
